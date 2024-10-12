@@ -1,0 +1,79 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rent Boarding House</title>
+    <base href="/">
+    <link rel="shortcut icon" type="image/png" href="/images/logos/seodashlogo.png" />
+    <link href="/css/styles.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+<!--  Body Wrapper -->
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+     data-sidebar-position="fixed" data-header-position="fixed">
+    <div
+            class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center w-100">
+            <div class="row justify-content-center w-100">
+                <div class="col-md-8 col-lg-6 col-xxl-3">
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <a href="index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                                <img src="/images/logos/logo-light.svg" alt="">
+                            </a>
+                            <p class="text-center">RentBoardingHouse</p>
+                            <form id="loginForm" th:action="@{/login}" method="post">
+                                <div class="mb-3">
+                                    <label for="Username" class="form-label">Tài Khoản</label>
+                                    <input type="text" class="form-control" th:name="username" th:placeholder="'Username'" required id="Username" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="Password" class="form-label">Mật Khẩu</label>
+                                    <input type="password" th:name="password" th:placeholder="'Password'" required class="form-control" id="Password">
+                                </div>
+                                <!-- Thông báo lỗi -->
+                                <div id="errorMessage" th:if="${error}" style="color:red;">
+                                    <span th:text="${error}"></span> <!-- Khu vực để hiển thị thông báo lỗi -->
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input primary" type="checkbox" id="flexCheckChecked" th:checked="true">
+                                        <label class="form-check-label text-dark" for="flexCheckChecked">
+                                            Ghi Nhớ Thiết Bị Này
+                                        </label>
+                                    </div>
+                                    <a class="text-primary fw-bold" th:href="@{/forgot-password}">Quên Mật Khẩu?</a>
+                                </div>
+                                <div>
+                                    <input type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4" value="Đăng nhập" />
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <p class="fs-4 mb-0 fw-bold">Chưa có tài khoản?</p>
+                                    <a class="text-primary fw-bold ms-2" th:href="@{/signup}">Tạo tài khoản</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</script>
+
+
+</body>
+
+</html>
